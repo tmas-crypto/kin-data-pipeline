@@ -1,0 +1,17 @@
+pipeline:
+  name: "Daily Kin Data Marts Pipeline"
+  requirements: "tyler_scheduling_poc/requirements.txt"
+  tasks:
+  - name: "Shell Script Installation Handling"
+    type: "bash script"
+    port: 8787
+    bash_script_path: "tyler_scheduling_poc/init.sh"
+  - name: "Daily Seed"
+    type: "vscode notebook"
+    py_path: "tyler_scheduling_poc/external_endpoint_data_seed.py"
+  - name: "Daily Models"
+    type: "vscode notebook"
+    py_path: "tyler_scheduling_poc/execute_snowflake_load.py"
+  - name: "Daily kin-data replication"
+    type: "vscode notebook"
+    py_path: "tyler_scheduling_poc/snowflake_postgres_replicator.py"

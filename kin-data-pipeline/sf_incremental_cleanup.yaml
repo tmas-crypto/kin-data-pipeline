@@ -1,0 +1,7 @@
+pipeline:
+  name: "Incremental Cleanup Job"
+  requirements: "tyler_scheduling_poc/requirements.txt"
+  tasks:
+  - name: "Incremental Models"
+    type: "vscode notebook"
+    py_path: "tyler_scheduling_poc/incremental_cleanup.py"

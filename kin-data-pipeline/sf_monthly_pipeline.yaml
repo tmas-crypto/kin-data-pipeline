@@ -1,0 +1,7 @@
+pipeline:
+  name: "Monthly Reporting Model Pipeline"
+  requirements: "tyler_scheduling_poc/requirements.txt"
+  tasks:
+  - name: "Monthly Models"
+    type: "vscode notebook"
+    py_path: "tyler_scheduling_poc/execute_snowflake_load.py"
